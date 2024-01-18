@@ -1,4 +1,4 @@
-package CP_Practice.Day_4;
+package CP_Practice.Day_04;
 
 public class MinMovesToEqualArray {
     public int minMoves(int[] nums) {
