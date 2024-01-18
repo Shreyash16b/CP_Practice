@@ -1,4 +1,4 @@
-package CP_Practice.Day_7;
+package CP_Practice.Day_07;
 
 import java.util.Arrays;
 import java.util.*;
