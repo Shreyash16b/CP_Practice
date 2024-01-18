@@ -1,4 +1,4 @@
-package CP_Practice.Day_8;
+package CP_Practice.Day_08;
 
 public class MedianOfSortdArray {
     public static void main(String[] args) {
