@@ -1,4 +1,4 @@
-package CP_Practice.Day_6;
+package CP_Practice.Day_06;
 
 public class MergeSortedArray {
 
