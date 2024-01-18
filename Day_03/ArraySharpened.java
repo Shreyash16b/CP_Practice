@@ -1,4 +1,4 @@
-package CP_Practice.Day_3;
+package CP_Practice.Day_03;
 
 import java.util.Scanner;
 
