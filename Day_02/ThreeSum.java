@@ -1,4 +1,4 @@
-package CP_Practice.Day_2;
+package CP_Practice.Day_02;
 
 import java.util.*;
 
