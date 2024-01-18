@@ -1,4 +1,4 @@
-package CP_Practice.Day_1;
+package CP_Practice.Day_01;
 class MajorityElement {
     public int majorityElement(int[] nums) {
         int res=0, count=0;

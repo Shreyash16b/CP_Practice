@@ -1,4 +1,4 @@
-package CP_Practice.Day_1;
+package CP_Practice.Day_01;
 import java.util.Scanner;
 
 public class SumSubarray {
