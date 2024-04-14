@@ -24,9 +24,9 @@ public class TripletMin {
 
     public static void solve(int[] a, int[] q) {
         Arrays.sort(a);
-        ArrayList<Integer> v = new ArrayList<>();
+        ArrayList<Long> v = new ArrayList<>();
         for (int i = 0; i < a.length; i++) {
-            int n = (a.length - i - 1) * (a.length - i - 2) / 2;
+            long n = (a.length - i - 1) * (a.length - i - 2) / 2;
             v.add(n);
             // System.out.println(n);
         }
@@ -36,13 +36,26 @@ public class TripletMin {
             // System.out.println(v.get(i) + v.get(i - 1));
         }
 
+        // System.out.println(v);
         for (int i = 0; i < q.length; i++) {
-            for (int j = 0; j < v.size(); j++) {
-                if (q[i] <= v.get(j)) {
-                    System.out.println(a[j]);
+            int lo = 0, hi = v.size() - 1;
+            int mid = lo + (hi - lo) / 2;
+            while (lo < hi) {
+                // System.out.println(mid + " " + hi + " " + lo);
+                mid = lo + (hi - lo) / 2;
+                if (v.get(mid) < q[i]) {
+                    lo = mid;
+                } else if (v.get(mid) > q[i]) {
+                    hi = mid;
+                }
+                if (v.get(mid) == q[i]) {
+                    break;
+                }
+                if (lo == hi) {
                     break;
                 }
             }
+            System.out.println(a[mid]);
         }
     }
 }

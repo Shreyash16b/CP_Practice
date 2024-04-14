@@ -1,10 +1,21 @@
 package CP_Practice.Day_13;
 
+import java.util.Scanner;
+
 public class BuildingAquarium {
 
     public static void main(String[] args) {
-        int[] col = { 3, 1, 2, 4, 6, 2, 5 };
-        findH(7, 9, col);
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int x = sc.nextInt();
+            int[] a = new int[n];
+            for (int i = 0; i < n; i++) {
+                a[i] = sc.nextInt();
+            }
+            findH(n, x, a);
+        }
     }
 
     public static void findH(int n, int x, int[] col) {
@@ -12,9 +23,16 @@ public class BuildingAquarium {
             System.out.println(x + col[0]);
             return;
         }
-        int lo = 0, hi = x + col[0];
+        int min = col[0];
+        for (int i = 0; i < col.length; i++) {
+            if (min > col[i])
+                min = col[i];
+        }
+        int lo = 0, hi = (int) Math.pow(10, 10);
+        System.out.println(lo + " " + hi);
+
         while (lo < hi) {
-            int mid = lo + (hi - lo + 1) / 2;
+            int mid = lo + (hi - lo) / 2;
             int curr = calculate(mid, col);
 
             if (curr > x) {
@@ -22,17 +40,16 @@ public class BuildingAquarium {
                 hi = mid;
             } else if (curr < x) {
                 System.out.println("2" + " " + curr);
-                lo = mid + 1;
-            } else if (curr == x) {
-                System.out.println(mid);
-                return;
+                lo = mid;
             }
-            if (lo == hi) {
-                System.out.println(lo);
-                return;
-            }
-        }
+            // else if (curr == x) {
+            // System.out.println(mid);
+            // return;
+            // }
 
+        }
+        System.out.println(lo);
+        return;
     }
 
     public static int calculate(int h, int[] col) {
